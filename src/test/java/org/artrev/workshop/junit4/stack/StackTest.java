@@ -1,11 +1,14 @@
 package org.artrev.workshop.junit4.stack;
 
+import org.artrev.workshop.junit4.stack.categories.PlainTests;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class StackTest {
+    @Category(PlainTests.class)
     @Test
     public void stackIsNotEmptyAfterPushingOneElement() {
         // given:
@@ -16,6 +19,7 @@ public class StackTest {
         assertFalse(actual.isEmpty());
     }
 
+    @Category(PlainTests.class)
     @Test
     public void stackIsEmptyAfterPoppingLastElement() {
         // given:

@@ -1,8 +1,10 @@
 package org.artrev.workshop.junit4.stack.spec;
 
 import org.artrev.workshop.junit4.stack.Stack;
+import org.artrev.workshop.junit4.stack.categories.SpecTests;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
@@ -13,6 +15,7 @@ import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertTrue;
 
+@Category(SpecTests.class)
 @RunWith(Enclosed.class)
 public class StackSpec {
     public static class EmptyStack {

@@ -6,11 +6,11 @@ import java.util.List;
 public class ActionSequence<A> implements Action<A> {
     private final List<Action<A>> actions;
 
-    public ActionSequence(final Action<A>... actions) {
+    private ActionSequence(final Action<A>... actions) {
         this(Arrays.asList(actions));
     }
 
-    public ActionSequence(final List<Action<A>> actions) {
+    private ActionSequence(final List<Action<A>> actions) {
         this.actions = actions;
     }
 
@@ -21,5 +21,18 @@ public class ActionSequence<A> implements Action<A> {
             result = action.run(result);
         }
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return actions.toString();
+    }
+
+    public static <A> ActionSequence<A> sequence(final Action<A>... actions) {
+        return new ActionSequence<>(actions);
+    }
+
+    public static <A> ActionSequence<A> sequence(final List<Action<A>> actions) {
+        return new ActionSequence<>(actions);
     }
 }

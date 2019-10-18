@@ -23,4 +23,9 @@ public class StackPopAction<A> implements Action<Stack<A>> {
         assertEquals(depthBefore - 1, result.getDepth());
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "StackPopAction";
+    }
 }

@@ -2,7 +2,9 @@ package org.artrev.workshop.junit4.stack.params;
 
 import org.artrev.workshop.junit4.stack.Stack;
 import org.artrev.workshop.junit4.stack.actions.Actions;
+import org.artrev.workshop.junit4.stack.categories.ParamTests;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
@@ -13,6 +15,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assume.assumeTrue;
 
+@Category(ParamTests.class)
 @RunWith(Parameterized.class)
 public class Parametrized1StackTest {
     @Parameterized.Parameters(

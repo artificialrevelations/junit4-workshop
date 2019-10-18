@@ -31,8 +31,13 @@ public class StackPushAction<A> implements Action<Stack<A>> {
         final Stack<A> result = model.push(element);
         final int depthBefore = model.getDepth();
         assertFalse(result.isEmpty());
-        assertEquals(element, model.peek());
-        assertEquals(depthBefore + 1, model.getDepth());
+        assertEquals(element, result.peek());
+        assertEquals(depthBefore + 1, result.getDepth());
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "StackPushAction(" + element + ")";
     }
 }

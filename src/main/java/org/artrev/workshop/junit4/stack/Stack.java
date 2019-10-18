@@ -92,6 +92,11 @@ public abstract class Stack<A> {
         public int getDepth() {
             return 1 + previous.getDepth();
         }
+
+        @Override
+        public String toString() {
+            return element + " : " + previous.toString();
+        }
     }
 
     /**
@@ -124,6 +129,11 @@ public abstract class Stack<A> {
         @Override
         public int getDepth() {
             return 0;
+        }
+
+        @Override
+        public String toString() {
+            return "empty";
         }
     }
 }
