@@ -36,6 +36,9 @@ public class StackSpec {
             assertEquals(0, actualDepth);
         }
 
+        /*
+          Handling exceptions with `expected` argument of the @Test annotation:
+        */
         @Test(expected = IllegalStateException.class)
         public void throwsAnExceptionAfterPopIsCalled() {
             // given:
@@ -44,6 +47,9 @@ public class StackSpec {
             tested.pop();
         }
 
+        /*
+          Handling exceptions with JUnit Rule (Expected Exception):
+        */
         @Rule
         public ExpectedException thrown = ExpectedException.none();
 
