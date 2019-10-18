@@ -233,5 +233,20 @@ public class StackSpec {
             // then:
             assertEquals(expected, actual);
         }
+
+        @Test
+        public void hasTheSameDepthAfterPushingAndPoppingAnElement() {
+            // given:
+            final Stack<Long> tested =
+                    (new Stack.Empty<Long>())
+                            .push(1L)
+                            .push(2L)
+                            .push(3L);
+            final int expectedDepth = tested.getDepth();
+            // when:
+            final int actualDepth = tested.push(42L).push(24L).pop().pop().getDepth();
+            // then:
+            assertEquals(expectedDepth, actualDepth);
+        }
     }
 }
