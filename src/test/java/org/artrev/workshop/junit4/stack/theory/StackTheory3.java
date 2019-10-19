@@ -12,8 +12,6 @@ import static org.junit.Assert.assertEquals;
 public class StackTheory3 {
     @Theory
     public void equalNumberOfPushAndPopCallsWillResultWithTheInitialStack(@InverseActionSequences Action<Stack<String>> action) {
-        System.out.println(action.toString());
-
         // given:
         final Stack<String> tested = new Stack.NonEmpty<>(
                 new Stack.Empty<>(),
